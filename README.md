@@ -24,7 +24,7 @@ A timed quiz with a score system. A fun quiz made with JavaScript, HTML, and CSS
 
 🔗 [Repository](https://github.com/nrenner0211/coding-quizv2)
 
-🔗 [Deployed](Coming soon!)
+🔗 [Deployed](https://nrenner0211.github.io/coding-quizv2/)
 
 ## Contact 📩
 
