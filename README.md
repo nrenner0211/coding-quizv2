@@ -1,19 +1,33 @@
-# octo-eureka
+# coding-quiz
 
-Coding Quiz
+## Table of Contents
 
-## About This Project
+- [coding-quiz](#coding-quiz)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Installation](#installation)
+    - [Clone Repository](#clone-repository)
+  - [Links](#links)
+  - [Contact 📩](#contact-)
 
-A seemingly simple coding quiz. When you click the start button, a question and answers pop up. If you answer wrong, seconds will be subtracted and will affect your final score. When you're done with the quiz, you can save and view your score!
+## About
 
-## Deployed Link
+A timed quiz with a score system. A fun quiz made with JavaScript, HTML, and CSS!
 
-[Deployed with GitHub Pages!](https://nrenner0211.github.io/octo-eureka/)
+## Installation
 
-## Screenshot
+### Clone Repository
 
-![A screenshot of the working website](./assets/images/octo-eureka.png)
+`git clone git@github.com:nrenner0211/coding-quizv2.git`
 
-## Thanks for Reading
+## Links
 
-Niki Renner
+🔗 [Repository](https://github.com/nrenner0211/coding-quizv2)
+
+🔗 [Deployed](Coming soon!)
+
+## Contact 📩
+
+[![Linkedin Badge](https://img.shields.io/badge/-nrenner0211-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/nicolette-renner/)](https://www.linkedin.com/in/nicolette-renner/)
+[![GitHub Badge](https://img.shields.io/badge/-nrenner0211-7261A3?style=flat-square&logo=Github&logoColor=white&link=https://github.com/nrenner0211)](https://github.com/nrenner0211)
+[![Gmail Badge](https://img.shields.io/badge/-nrenner0211@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:nrenner0211@gmail.com)](mailto:nrenner0211@gmail.com)

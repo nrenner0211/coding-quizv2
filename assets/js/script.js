@@ -15,10 +15,10 @@ var questionEl = document.getElementById("question");
 var resultEl = document.getElementById("result");
 var rightOrWrong = document.querySelector('#right-or-wrong');
 var nameInput = document.querySelector('#name');
-var timeLeft = 40;
+var timeLeft = 50;
 var score = 0;
 
-//score local storage variables
+// score local storage variables
 var localStorage = window.localStorage;
 var highScores = [];
 if (localStorage.getItem('highScores') !== null) {
@@ -75,7 +75,7 @@ var quizQuestions = [
         correct: "window.location='http://www.newlocation.com';"
     },
     {
-        question: "What does CSS mean?",
+        question: "What is CSS?",
         choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Cascading Style Shorts"],
         correct: "Cascading Style Sheets"
     }
@@ -214,7 +214,7 @@ function viewHighScores() {
 };
 
 function resetQuiz() {
-    timeLeft = 40;
+    timeLeft = 50;
     startBtn.addEventListener("click", startQuiz);
     location.reload()
 };
