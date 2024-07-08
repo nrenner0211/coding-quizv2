@@ -1,8 +1,8 @@
-# coding-quiz
+# it-cert-prep-quiz
 
 ## Table of Contents
 
-- [coding-quiz](#coding-quiz)
+- [it-cert-prep-quiz](#it-cert-prep-quiz)
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [Installation](#installation)
@@ -12,7 +12,7 @@
 
 ## About
 
-A timed quiz with a score system. A fun quiz made with JavaScript, HTML, and CSS!
+A study guide for entry-level IT certifications and fun quiz all in one. A fun quiz made with JavaScript, HTML, and CSS!
 
 ## Installation
 

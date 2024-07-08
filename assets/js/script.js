@@ -1,7 +1,7 @@
 // dom reference
 console.dir(window.document);
 
-// global variables
+// DOM elements
 var startBtn = document.querySelector(".start-btn");
 var startSlide = document.getElementById("start-slide");
 var quizSlide = document.getElementById("quiz-slide");
@@ -15,7 +15,9 @@ var questionEl = document.getElementById("question");
 var resultEl = document.getElementById("result");
 var rightOrWrong = document.querySelector('#right-or-wrong');
 var nameInput = document.querySelector('#name');
-var timeLeft = 50;
+
+// timer variables
+var timeLeft = 60;
 var score = 0;
 
 // score local storage variables
@@ -34,14 +36,33 @@ var quizQuestions = [
         question: "Commonly used data types do NOT include:",
         choices: [
             "Boolean", 
-            "Giraffe", 
+            "SQL", 
             "String", 
             "Number"
         ],
-        correct: "Giraffe"
+        correct: "SQL"
     },
     {
-        question: "How can you add a comment in a JavaScript?",
+        question: "What is a hypervisor in virtualization?",
+        choices: [
+            "A tool to manage hardware components", 
+            "A security protocol", 
+            "A type of cloud service", 
+            "A software that allows multiple operating systems to run on a single physical machine"
+        ],
+        correct: "A software that allows multiple operating systems to run on a single physical machine"
+    },
+    {
+        question: "What type of memory is volatile and loses data when power is turned off?",
+        choices: ["ROM",
+            "SSD",
+            "RAM", 
+            "HDD"
+        ],
+        correct: "RAM"
+    },
+    {
+        question: "How can you add a comment in a JavaScript (.js) file?",
         choices: ["//comment",
             "/*comment*/",
             "<!--comment-->", 
@@ -50,22 +71,40 @@ var quizQuestions = [
         correct: "//comment"
     },
     {
-        question: "Who invented Javascript?",
-        choices: ["Andy Samberg", 
-            "Dave Chappelle", 
-            "Someone who shouldn't have", 
-            "Brendan Eich"
+        question: "Which of the following is the default file system for Windows 10?",
+        choices: ["FAT32", 
+            "HFS+", 
+            "NTFS", 
+            "ext4"
         ],
-        correct: "Brendan Eich"
+        correct: "NTFS"
+    },
+    {question: "Which of the following ports is commonly used for connecting a monitor?",
+    choices: [
+        "USB", 
+        "HDMI", 
+        "Ethernet", 
+        "SATA"
+    ],
+    correct: "HDMI"
     },
     {
-        question: "Which is a common naming convention for compounded (joined) words in Javascript?",
-        choices: ["froggyJump", 
-            "stairCase", 
-            "camelCase", 
-            "camelToe"
+        question: "Which protocol is used to send email from a client to a server?",
+        choices: ["HTTP", 
+            "POP3", 
+            "FTP", 
+            "SMTP"
         ],
-        correct: "camelCase"
+        correct: "SMTP"
+    },
+    {
+        question: "What is the first step in the troubleshooting methodology?",
+        choices: ["Establish a theory of probable cause", 
+            "Identify the problem", 
+            "Test the theory", 
+            "Document findings"
+        ],
+        correct: "Identify the problem"
     },
     {
         question: "Which of the following is the correct syntax to redirect a url using JavaScript?",
@@ -76,9 +115,27 @@ var quizQuestions = [
     },
     {
         question: "What is CSS?",
-        choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Cascading Style Shorts"],
+        choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Control Start Stop"],
         correct: "Cascading Style Sheets"
-    }
+    },
+    {
+        question: "Which connector is commonly used for internal hard drives?",
+        choices: ["USB", 
+            "HDMI", 
+            "VGA", 
+            "SATA"
+        ],
+        correct: "SATA"
+    },
+    {
+        question: "Which command is used to list files in a directory in Linux?",
+        choices: ["dir", 
+            "ls", 
+            "list", 
+            "cd"
+        ],
+        correct: "ls"
+    },
 ];
 
 //home screen
@@ -140,7 +197,7 @@ function checkAnswer(choice) {
     // check if correct
     var correctAnswer = quizQuestions[questionIndex].correct
     if (choice !== correctAnswer) {
-        rightOrWrong.textContent = "*buzzerSound* WRONG!";
+        rightOrWrong.textContent = "Try again!";
         timeLeft = timeLeft - 10;
     } else {
         score = score + 5;
@@ -214,7 +271,7 @@ function viewHighScores() {
 };
 
 function resetQuiz() {
-    timeLeft = 50;
+    timeLeft = 60;
     startBtn.addEventListener("click", startQuiz);
     location.reload()
 };
