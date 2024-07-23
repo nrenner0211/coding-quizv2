@@ -17,7 +17,7 @@ var rightOrWrong = document.querySelector('#right-or-wrong');
 var nameInput = document.querySelector('#name');
 
 // timer variables
-var timeLeft = 60;
+var timeLeft = 120;
 var score = 0;
 
 // score local storage variables
@@ -128,6 +128,15 @@ var quizQuestions = [
         correct: "SATA"
     },
     {
+        question: "Hard drive cases use which size of standard screw thread and length?",
+        choices: ["6-32 and 3/16", 
+            "6-32 and 5/32", 
+            "4-40 and 3/16", 
+            "Self-tapping 7/16"
+        ],
+        correct: "6-32 and 5/32"
+    },
+    {
         question: "Which command is used to list files in a directory in Linux?",
         choices: ["dir", 
             "ls", 
@@ -135,6 +144,16 @@ var quizQuestions = [
             "cd"
         ],
         correct: "ls"
+    },
+    {
+        question: "Power-on-self-test (POST) beeps may also include an error code. Which error code indicates a hard drive error?",
+        choices: [
+            "300-399", 
+            "600-699", 
+            "1700-1799",
+            "100-199"
+        ],
+        correct: "1700-1799"
     },
 ];
 
@@ -173,7 +192,7 @@ function startQuiz() {
 
 function loadQuestion() {
     //question appears onscreen
-    questionEl.textContent = quizQuestions[questionIndex].question;
+    questionEl.textContent = randomQuestion[questionIndex].question;
     //clears old answer choices
     answerEl.innerHTML = ""; 
 
@@ -271,7 +290,7 @@ function viewHighScores() {
 };
 
 function resetQuiz() {
-    timeLeft = 60;
+    timeLeft = 120;
     startBtn.addEventListener("click", startQuiz);
     location.reload()
 };
