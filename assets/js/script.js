@@ -79,14 +79,24 @@ var quizQuestions = [
         ],
         correct: "NTFS"
     },
-    {question: "Which of the following ports is commonly used for connecting a monitor?",
-    choices: [
-        "USB", 
-        "HDMI", 
-        "Ethernet", 
-        "SATA"
-    ],
-    correct: "HDMI"
+    {
+        question: "The four basic file attributes, regardless of the operating system, are:",
+        choices: ["Read-only, system, ROM, and RAM", 
+            "Read-only, system, hidden, and archive", 
+            "0000001, 0000010, 0000100, 0001000", 
+            "Attribute, audio, video, and scripting"
+        ],
+        correct: "Read-only, system, hidden, and archive"
+    },
+    {
+        question: "Which of the following ports is commonly used for connecting a monitor?",
+        choices: [
+            "USB", 
+            "HDMI", 
+            "Ethernet", 
+            "SATA"
+        ],
+        correct: "HDMI"
     },
     {
         question: "Which protocol is used to send email from a client to a server?",
@@ -96,6 +106,16 @@ var quizQuestions = [
             "SMTP"
         ],
         correct: "SMTP"
+    },
+    {
+        question: "The index on the file system, which points to where a file is located on a hard drive, is called the?",
+        choices: [
+            "Resource queue", 
+            "File directory system (FDS)", 
+            "Allocation Materfile Directory (AMD)", 
+            "File Allocation Table (FAT)"
+        ],
+        correct: "File Allocation Table (FAT)"
     },
     {
         question: "What is the first step in the troubleshooting methodology?",
@@ -192,7 +212,7 @@ function startQuiz() {
 
 function loadQuestion() {
     //question appears onscreen
-    questionEl.textContent = randomQuestion[questionIndex].question;
+    questionEl.textContent = quizQuestions[questionIndex].question;
     //clears old answer choices
     answerEl.innerHTML = ""; 
 
@@ -211,6 +231,7 @@ function loadQuestion() {
         answerEl.appendChild(answerBtn);
     }
 };
+
 // debugger;
 function checkAnswer(choice) {
     // check if correct
