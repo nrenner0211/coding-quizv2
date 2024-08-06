@@ -148,6 +148,15 @@ var quizQuestions = [
         correct: "SATA"
     },
     {
+        question: "If you wanted to remove personal information from a computer in order to sell it what would you do?",
+        choices: ["Remove the hard drive", 
+            "Utilize the PC reset option", 
+            "Run a PC refresh", 
+            "Delete file history"
+        ],
+        correct: "Utilize the PC reset option"
+    },
+    {
         question: "Hard drive cases use which size of standard screw thread and length?",
         choices: ["6-32 and 3/16", 
             "6-32 and 5/32", 
