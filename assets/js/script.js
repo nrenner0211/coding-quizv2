@@ -108,6 +108,16 @@ var quizQuestions = [
         correct: "SMTP"
     },
     {
+        question: "Which of these provides resources such as virtual storage, physical machines, or virtual machines?",
+        choices: [
+            "Platform as a Service (PaaS)", 
+            "Software as a Service (SaaS)", 
+            "Infrastructure as a Service (IaaS)", 
+            "All of these"
+        ],
+        correct: "Infrastructure as a Service (IaaS)"
+    },
+    {
         question: "The index on the file system, which points to where a file is located on a hard drive, is called the?",
         choices: [
             "Resource queue", 
