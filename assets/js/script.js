@@ -62,15 +62,6 @@ var quizQuestions = [
         correct: "RAM"
     },
     {
-        question: "How can you add a comment in a JavaScript (.js) file?",
-        choices: ["//comment",
-            "/*comment*/",
-            "<!--comment-->", 
-            "~comment~!%$#~"
-        ],
-        correct: "//comment"
-    },
-    {
         question: "Which of the following is the default file system for Windows 10?",
         choices: ["FAT32", 
             "HFS+", 
@@ -78,6 +69,14 @@ var quizQuestions = [
             "ext4"
         ],
         correct: "NTFS"
+    },
+    {
+        question: "True or False? Authentication is the process of verifying the identity of a user.",
+        choices: [
+            "True", 
+            "False", 
+        ],
+        correct: "True"
     },
     {
         question: "The four basic file attributes, regardless of the operating system, are:",
@@ -137,14 +136,16 @@ var quizQuestions = [
         correct: "Identify the problem"
     },
     {
-        question: "Which of the following is the correct syntax to redirect a url using JavaScript?",
-        choices: [
-            "document.location='http://www.newlocation.com';", "browser.location='http://www.newlocation.com';", "navigator.location='http://www.newlocation.com';", "window.location='http://www.newlocation.com';"
+        question: "Which type of malware tricks a user into running a program that does something different than expected?",
+        choices: ["Worm", 
+            "Ransomware", 
+            "Trojan Virus",
+            "Spyware"
         ],
-        correct: "window.location='http://www.newlocation.com';"
+        correct: "Trojan Virus"
     },
     {
-        question: "What is CSS?",
+        question: "What does CSS mean?",
         choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Control Start Stop"],
         correct: "Cascading Style Sheets"
     },
@@ -176,6 +177,15 @@ var quizQuestions = [
         correct: "6-32 and 5/32"
     },
     {
+        question: "If you wished to encrypt communications from an employee's computer back to the office network, which would you use?",
+        choices: ["Directory permissions", 
+            "DLP", 
+            "Access-control list", 
+            "VPN"
+        ],
+        correct: "VPN"
+    },
+    {
         question: "Which command is used to list files in a directory in Linux?",
         choices: ["dir", 
             "ls", 
@@ -193,6 +203,22 @@ var quizQuestions = [
             "100-199"
         ],
         correct: "1700-1799"
+    },
+    {
+        question: "How can you add a comment in a JavaScript (.js) file?",
+        choices: ["//comment",
+            "/*comment*/",
+            "<!--comment-->", 
+            "~comment~!%$#~"
+        ],
+        correct: "//comment"
+    },
+    {
+        question: "Which of the following is the correct syntax to redirect a url using JavaScript?",
+        choices: [
+            "document.location='http://www.newlocation.com';", "browser.location='http://www.newlocation.com';", "navigator.location='http://www.newlocation.com';", "window.location='http://www.newlocation.com';"
+        ],
+        correct: "window.location='http://www.newlocation.com';"
     },
 ];
 
