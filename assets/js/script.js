@@ -145,6 +145,24 @@ var quizQuestions = [
         correct: "Trojan Virus"
     },
     {
+        question: "Which of the following servers is responsible for providing IP addresses to clients on the network?",
+        choices: ["DNS server", 
+            "Proxy server", 
+            "Fileserver",
+            "DHCP server"
+        ],
+        correct: "DHCP server"
+    },
+    {
+        question: "Servers provide a number of services to a network. The server used to deliver Internet sites is the:",
+        choices: ["Fileserver", 
+            "Web server", 
+            "Proxy server", 
+            "Print server"
+        ],
+        correct: "Web server"
+    },
+    {
         question: "What does CSS mean?",
         choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Control Start Stop"],
         correct: "Cascading Style Sheets"
@@ -166,6 +184,15 @@ var quizQuestions = [
             "Delete file history"
         ],
         correct: "Utilize the PC reset option"
+    },
+    {
+        question: "Fans are important to manage internal airflow for computers. The air is warmest by which of the following components?",
+        choices: ["Card slots", 
+            "Hard drive", 
+            "CPU", 
+            "Power supply"
+        ],
+        correct: "Power supply"
     },
     {
         question: "Hard drive cases use which size of standard screw thread and length?",
