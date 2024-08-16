@@ -195,6 +195,15 @@ var quizQuestions = [
         correct: "Power supply"
     },
     {
+        question: "A technician is troubleshooting what appears to be a RAM issue on a PC. Which of the following symptoms would indicate if this is a RAM issue?",
+        choices: ["Wrong BIOS time", 
+            "Continuous reboots", 
+            "Distended capacitors", 
+            "POST code beeps"
+        ],
+        correct: "Continuous reboots"
+    },
+    {
         question: "Hard drive cases use which size of standard screw thread and length?",
         choices: ["6-32 and 3/16", 
             "6-32 and 5/32", 
