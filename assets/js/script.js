@@ -163,6 +163,15 @@ var quizQuestions = [
         correct: "Web server"
     },
     {
+        question: "What is the function of a GPU in a computer?",
+        choices: ["To store data",
+            "To connect peripherals",
+            "To process graphics and video", 
+            "To manage system memory"
+        ],
+        correct: "To process graphics and video"
+    },
+    {
         question: "What does CSS mean?",
         choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Control Start Stop"],
         correct: "Cascading Style Sheets"
