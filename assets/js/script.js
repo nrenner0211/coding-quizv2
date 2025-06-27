@@ -17,6 +17,7 @@ var rightOrWrong = document.querySelector('#right-or-wrong');
 var nameInput = document.querySelector('#name');
 
 // timer variables
+var time;
 var timeLeft = 120;
 var score = 0;
 
@@ -27,11 +28,118 @@ if (localStorage.getItem('highScores') !== null) {
     highScores = JSON.parse(localStorage.getItem('highScores'));
 }
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // question variable
 var questionIndex = 0;
 
 // questions array
 var quizQuestions = [
+    {
+        "question": "What component is responsible for temporarily holding data for quick access by the CPU?",
+        "choices": [
+            "SSD",
+            "Hard Drive",
+            "RAM",
+            "NIC"
+        ],
+        "correct": "RAM"
+    },
+    {
+        "question": "Which tool is best for testing the voltage output of a power supply?",
+        "choices": [
+            "Multimeter",
+            "Loopback plug",
+            "POST card",
+            "Toner probe"
+        ],
+        "correct": "Multimeter"
+    },
+    {
+        "question": "What type of expansion slot is commonly used for modern graphics cards?",
+        "choices": [
+            "PCI",
+            "AGP",
+            "PCIe",
+            "ISA"
+        ],
+        "correct": "PCIe"
+    },
+    {
+        "question": "What does BIOS stand for?",
+        "choices": [
+            "Basic Input Output System",
+            "Binary Integrated Operating System",
+            "Basic Internal Operating Sequence",
+            "Boot Integrated Output Software"
+        ],
+        "correct": "Basic Input Output System"
+    },
+    {
+        "question": "Which type of cable is used for high-speed network connections and has four twisted pairs?",
+        "choices": [
+            "Coaxial",
+            "Fiber optic",
+            "Cat 6",
+            "Serial"
+        ],
+        "correct": "Cat 6"
+    },
+    {
+        "question": "What is the main purpose of thermal paste?",
+        "choices": [
+            "Lubricate the CPU fan",
+            "Prevent electrical shorts",
+            "Conduct heat between CPU and heatsink",
+            "Insulate the CPU"
+        ],
+        "correct": "Conduct heat between CPU and heatsink"
+    },
+    {
+        "question": "Which mobile connection type is best suited for high-speed data and global roaming?",
+        "choices": [
+            "CDMA",
+            "GSM",
+            "Wi-Fi",
+            "Bluetooth"
+        ],
+        "correct": "GSM"
+    },
+    {
+        "question": "What is the first step in the CompTIA troubleshooting methodology?",
+        "choices": [
+            "Document findings",
+            "Establish a theory",
+            "Identify the problem",
+            "Test the theory"
+        ],
+        "correct": "Identify the problem"
+    },
+    {
+        "question": "Which file system is used by default in Windows 10?",
+        "choices": [
+            "FAT32",
+            "ext4",
+            "HFS+",
+            "NTFS"
+        ],
+        "correct": "NTFS"
+    },
+    {
+        "question": "What command is used to check the current IP configuration in Windows?",
+        "choices": [
+            "ping",
+            "ipconfig",
+            "tracert",
+            "nslookup"
+        ],
+        "correct": "ipconfig"
+    },
     {
         question: "Commonly used data types do NOT include:",
         choices: [
@@ -277,6 +385,9 @@ function startScreen() {
 };
 
 function startQuiz() {
+    // Shuffle questions before starting
+    shuffle(quizQuestions);
+
     //timer
     var time = setInterval(startTimer, 1000);
 
@@ -295,7 +406,7 @@ function startQuiz() {
     startSlide.style.display = "none";
     quizSlide.style.display = "block";
     endGameSlide.style.display = "none";
-    navButtons.style.diplay = "none";
+    navButtons.style.display = "none";
 
     loadQuestion();
 };
@@ -307,7 +418,7 @@ function loadQuestion() {
     answerEl.innerHTML = ""; 
 
     var questionChoices = quizQuestions[questionIndex].choices
-    var sortedChoices = questionChoices.sort();
+    shuffle(questionChoices);
     for (var i in questionChoices) {
         var item = questionChoices[i];
         var answerBtn = document.createElement('button');
@@ -327,7 +438,7 @@ function checkAnswer(choice) {
     // check if correct
     var correctAnswer = quizQuestions[questionIndex].correct
     if (choice !== correctAnswer) {
-        rightOrWrong.textContent = "Try again!";
+        rightOrWrong.textContent = "Wrong!";
         timeLeft = timeLeft - 10;
     } else {
         score = score + 5;
@@ -351,7 +462,7 @@ function checkAnswer(choice) {
 
 function endGame() {
     // if time runs out, endgame
-    if (timeLeft =+ 1) {
+    if (timeLeft <= 0){
         clearInterval(timeLeft);
     }
 

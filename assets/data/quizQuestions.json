@@ -1,0 +1,333 @@
+{
+    "question": "What component is responsible for temporarily holding data for quick access by the CPU?",
+    "choices": [
+        "SSD",
+        "Hard Drive",
+        "RAM",
+        "NIC"
+    ],
+    "correct": "RAM"
+},
+{
+    "question": "Which tool is best for testing the voltage output of a power supply?",
+    "choices": [
+        "Multimeter",
+        "Loopback plug",
+        "POST card",
+        "Toner probe"
+    ],
+    "correct": "Multimeter"
+},
+{
+    "question": "What type of expansion slot is commonly used for modern graphics cards?",
+    "choices": [
+        "PCI",
+        "AGP",
+        "PCIe",
+        "ISA"
+    ],
+    "correct": "PCIe"
+},
+{
+    "question": "What does BIOS stand for?",
+    "choices": [
+        "Basic Input Output System",
+        "Binary Integrated Operating System",
+        "Basic Internal Operating Sequence",
+        "Boot Integrated Output Software"
+    ],
+    "correct": "Basic Input Output System"
+},
+{
+    "question": "Which type of cable is used for high-speed network connections and has four twisted pairs?",
+    "choices": [
+        "Coaxial",
+        "Fiber optic",
+        "Cat 6",
+        "Serial"
+    ],
+    "correct": "Cat 6"
+},
+{
+    "question": "What is the main purpose of thermal paste?",
+    "choices": [
+        "Lubricate the CPU fan",
+        "Prevent electrical shorts",
+        "Conduct heat between CPU and heatsink",
+        "Insulate the CPU"
+    ],
+    "correct": "Conduct heat between CPU and heatsink"
+},
+{
+    "question": "Which mobile connection type is best suited for high-speed data and global roaming?",
+    "choices": [
+        "CDMA",
+        "GSM",
+        "Wi-Fi",
+        "Bluetooth"
+    ],
+    "correct": "GSM"
+},
+{
+    "question": "What is the first step in the CompTIA troubleshooting methodology?",
+    "choices": [
+        "Document findings",
+        "Establish a theory",
+        "Identify the problem",
+        "Test the theory"
+    ],
+    "correct": "Identify the problem"
+},
+{
+    "question": "Which file system is used by default in Windows 10?",
+    "choices": [
+        "FAT32",
+        "ext4",
+        "HFS+",
+        "NTFS"
+    ],
+    "correct": "NTFS"
+},
+{
+    "question": "What command is used to check the current IP configuration in Windows?",
+    "choices": [
+        "ping",
+        "ipconfig",
+        "tracert",
+        "nslookup"
+    ],
+    "correct": "ipconfig"
+},
+{
+    question: "Commonly used data types do NOT include:",
+    choices: [
+        "Boolean", 
+        "SQL", 
+        "String", 
+        "Number"
+    ],
+    correct: "SQL"
+},
+{
+    question: "What is a hypervisor in virtualization?",
+    choices: [
+        "A tool to manage hardware components", 
+        "A security protocol", 
+        "A type of cloud service", 
+        "A software that allows multiple operating systems to run on a single physical machine"
+    ],
+    correct: "A software that allows multiple operating systems to run on a single physical machine"
+},
+{
+    question: "What type of memory is volatile and loses data when power is turned off?",
+    choices: ["ROM",
+        "SSD",
+        "RAM", 
+        "HDD"
+    ],
+    correct: "RAM"
+},
+{
+    question: "Which of the following is the default file system for Windows 10?",
+    choices: ["FAT32", 
+        "HFS+", 
+        "NTFS", 
+        "ext4"
+    ],
+    correct: "NTFS"
+},
+{
+    question: "True or False? Authentication is the process of verifying the identity of a user.",
+    choices: [
+        "True", 
+        "False", 
+    ],
+    correct: "True"
+},
+{
+    question: "The four basic file attributes, regardless of the operating system, are:",
+    choices: ["Read-only, system, ROM, and RAM", 
+        "Read-only, system, hidden, and archive", 
+        "0000001, 0000010, 0000100, 0001000", 
+        "Attribute, audio, video, and scripting"
+    ],
+    correct: "Read-only, system, hidden, and archive"
+},
+{
+    question: "Which of the following ports is commonly used for connecting a monitor?",
+    choices: [
+        "USB", 
+        "HDMI", 
+        "Ethernet", 
+        "SATA"
+    ],
+    correct: "HDMI"
+},
+{
+    question: "Which protocol is used to send email from a client to a server?",
+    choices: ["HTTP", 
+        "POP3", 
+        "FTP", 
+        "SMTP"
+    ],
+    correct: "SMTP"
+},
+{
+    question: "Which of these provides resources such as virtual storage, physical machines, or virtual machines?",
+    choices: [
+        "Platform as a Service (PaaS)", 
+        "Software as a Service (SaaS)", 
+        "Infrastructure as a Service (IaaS)", 
+        "All of these"
+    ],
+    correct: "Infrastructure as a Service (IaaS)"
+},
+{
+    question: "The index on the file system, which points to where a file is located on a hard drive, is called the?",
+    choices: [
+        "Resource queue", 
+        "File directory system (FDS)", 
+        "Allocation Materfile Directory (AMD)", 
+        "File Allocation Table (FAT)"
+    ],
+    correct: "File Allocation Table (FAT)"
+},
+{
+    question: "What is the first step in the troubleshooting methodology?",
+    choices: ["Establish a theory of probable cause", 
+        "Identify the problem", 
+        "Test the theory", 
+        "Document findings"
+    ],
+    correct: "Identify the problem"
+},
+{
+    question: "Which type of malware tricks a user into running a program that does something different than expected?",
+    choices: ["Worm", 
+        "Ransomware", 
+        "Trojan Virus",
+        "Spyware"
+    ],
+    correct: "Trojan Virus"
+},
+{
+    question: "Which of the following servers is responsible for providing IP addresses to clients on the network?",
+    choices: ["DNS server", 
+        "Proxy server", 
+        "Fileserver",
+        "DHCP server"
+    ],
+    correct: "DHCP server"
+},
+{
+    question: "Servers provide a number of services to a network. The server used to deliver Internet sites is the:",
+    choices: ["Fileserver", 
+        "Web server", 
+        "Proxy server", 
+        "Print server"
+    ],
+    correct: "Web server"
+},
+{
+    question: "What is the function of a GPU in a computer?",
+    choices: ["To store data",
+        "To connect peripherals",
+        "To process graphics and video", 
+        "To manage system memory"
+    ],
+    correct: "To process graphics and video"
+},
+{
+    question: "What does CSS mean?",
+    choices: ["Cascading Scissor Sheets", "Crazy Cool Stuff", "Cascading Style Sheets", "Control Start Stop"],
+    correct: "Cascading Style Sheets"
+},
+{
+    question: "Which connector is commonly used for internal hard drives?",
+    choices: ["USB", 
+        "HDMI", 
+        "VGA", 
+        "SATA"
+    ],
+    correct: "SATA"
+},
+{
+    question: "If you wanted to remove personal information from a computer in order to sell it what would you do?",
+    choices: ["Remove the hard drive", 
+        "Utilize the PC reset option", 
+        "Run a PC refresh", 
+        "Delete file history"
+    ],
+    correct: "Utilize the PC reset option"
+},
+{
+    question: "Fans are important to manage internal airflow for computers. The air is warmest by which of the following components?",
+    choices: ["Card slots", 
+        "Hard drive", 
+        "CPU", 
+        "Power supply"
+    ],
+    correct: "Power supply"
+},
+{
+    question: "A technician is troubleshooting what appears to be a RAM issue on a PC. Which of the following symptoms would indicate if this is a RAM issue?",
+    choices: ["Wrong BIOS time", 
+        "Continuous reboots", 
+        "Distended capacitors", 
+        "POST code beeps"
+    ],
+    correct: "Continuous reboots"
+},
+{
+    question: "Hard drive cases use which size of standard screw thread and length?",
+    choices: ["6-32 and 3/16", 
+        "6-32 and 5/32", 
+        "4-40 and 3/16", 
+        "Self-tapping 7/16"
+    ],
+    correct: "6-32 and 5/32"
+},
+{
+    question: "If you wished to encrypt communications from an employee's computer back to the office network, which would you use?",
+    choices: ["Directory permissions", 
+        "DLP", 
+        "Access-control list", 
+        "VPN"
+    ],
+    correct: "VPN"
+},
+{
+    question: "Which command is used to list files in a directory in Linux?",
+    choices: ["dir", 
+        "ls", 
+        "list", 
+        "cd"
+    ],
+    correct: "ls"
+},
+{
+    question: "Power-on-self-test (POST) beeps may also include an error code. Which error code indicates a hard drive error?",
+    choices: [
+        "300-399", 
+        "600-699", 
+        "1700-1799",
+        "100-199"
+    ],
+    correct: "1700-1799"
+},
+{
+    question: "How can you add a comment in a JavaScript (.js) file?",
+    choices: ["//comment",
+        "/*comment*/",
+        "<!--comment-->", 
+        "~comment~!%$#~"
+    ],
+    correct: "//comment"
+},
+{
+    question: "Which of the following is the correct syntax to redirect a url using JavaScript?",
+    choices: [
+        "document.location='http://www.newlocation.com';", "browser.location='http://www.newlocation.com';", "navigator.location='http://www.newlocation.com';", "window.location='http://www.newlocation.com';"
+    ],
+    correct: "window.location='http://www.newlocation.com';"
+}
