@@ -1,78 +1,134 @@
-/* stylesheet */
+/* ===== Root Variables ===== */
 :root {
-    --dark: #011627;
-    --secondary: #FFB100;
-    --primary: #54F2F2;
-    --tertiary: #313D5A;
-    --text: #fdfffc;
+  --dark: #011627;
+  --secondary: #FFB100;
+  --primary: #54F2F2;
+  --tertiary: #1E2A47;
+  --text: #fdfffc;
+  --card-bg: #102a43;
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
+/* ===== Global Reset ===== */
 *, *::before, *::after {
-    box-sizing: border-box;
-    font-family:'Noto Sans', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
 }
 
 body {
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    line-height: 2.5;
-    padding: 0;
-    margin: 0;
-    font-size: 21px;
-    color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: var(--text);
 }
 
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* ===== Header ===== */
 .header-content {
-    /* display: flex; */
-
-    justify-content: space-between;
-    padding: 20px;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  margin: 1rem auto 2rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  backdrop-filter: blur(8px);
 }
 
 .high-scores {
-    cursor: pointer;
-    padding: 1rem;
-    color: var(--dark);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--tertiary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
+.high-scores:hover {
+  background: var(--secondary);
+  color: var(--dark);
+}
+
+/* ===== Start Slide ===== */
 #start-slide {
-    padding: 20px;
-    margin: 20px;
-    flex-direction: column; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px var(--shadow);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
 }
 
+/* ===== Buttons ===== */
 .btn {
-    background-color: var(--primary);
-    color: var(--dark);
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 15px;
-    padding: 20px 35px;
-    margin: 15px;
+  background-color: var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 2rem;
+  margin: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
+  transform: translateY(-3px);
 }
 
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Button Grid (for answers) ===== */
 .btn-grid {
-    display: grid;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
+/* ===== Utility ===== */
 .hide {
-    display: none;
+  display: none;
 }
 
+/* ===== Animations ===== */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .btn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #start-slide {
+    padding: 1.5rem;
+  }
+}
