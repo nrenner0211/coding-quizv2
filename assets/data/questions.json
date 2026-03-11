@@ -429,6 +429,206 @@
             "802.11b"
           ],
           "correct": "802.11n"
+        },
+        {
+          "question": "What type of malware disguises itself as legitimate software to trick users into installing it?",
+          "choices": [
+            "Trojan Horse",
+            "Worm",
+            "Rootkit",
+            "Adware"
+          ],
+          "correct": "Trojan Horse"
+        },
+        {
+          "question": "Which type of malware is capable of self-replicating and spreading across a network WITHOUT needing to attach itself to a host file?",
+          "choices": [
+            "Virus",
+            "Worm",
+            "Spyware",
+            "Ransomware"
+          ],
+          "correct": "Worm"
+        },
+        {
+          "question": "What is the primary purpose of a rootkit?",
+          "choices": [
+            "To encrypt files and demand a ransom",
+            "To display unwanted advertisements",
+            "To gain and maintain privileged access while hiding its presence",
+            "To log keystrokes and steal credentials"
+          ],
+          "correct": "To gain and maintain privileged access while hiding its presence"
+        },
+        {
+          "question": "Which of the following BEST describes a computer virus?",
+          "choices": [
+            "Malware that spreads without user interaction",
+            "Malware that attaches itself to a host file and spreads when that file is executed",
+            "Malware that secretly records user activity",
+            "Malware that locks the user out of their system"
+          ],
+          "correct": "Malware that attaches itself to a host file and spreads when that file is executed"
+        },
+        {
+          "question": "What distinguishes ransomware from other types of malware?",
+          "choices": [
+            "It hides deep in the operating system kernel",
+            "It replicates itself across network shares",
+            "It encrypts a victim's data and demands payment for the decryption key",
+            "It silently monitors user behavior without causing damage"
+          ],
+          "correct": "It encrypts a victim's data and demands payment for the decryption key"
+        },
+        {
+          "question": "A piece of malware is silently capturing everything a user types, including passwords and credit card numbers. What type of malware is this?",
+          "choices": [
+            "Adware",
+            "Keylogger",
+            "Worm",
+            "Bootkit"
+          ],
+          "correct": "Keylogger"
+        },
+        {
+          "question": "Which type of rootkit is the most difficult to detect and remove because it infects the Master Boot Record (MBR)?",
+          "choices": [
+            "User-mode rootkit",
+            "Kernel-mode rootkit",
+            "Bootkit",
+            "Hypervisor rootkit"
+          ],
+          "correct": "Bootkit"
+        },
+        {
+          "question": "What is a botnet?",
+          "choices": [
+            "A network of firewalls protecting a system",
+            "A collection of infected machines controlled remotely by an attacker",
+            "A type of antivirus software",
+            "A secure tunnel between two networks"
+          ],
+          "correct": "A collection of infected machines controlled remotely by an attacker"
+        },
+        {
+          "question": "Spyware and adware are both types of malware. What is the key difference between them?",
+          "choices": [
+            "Adware encrypts files; spyware does not",
+            "Spyware collects user data secretly; adware primarily delivers unwanted advertisements",
+            "Adware spreads via networks; spyware requires physical access",
+            "Spyware is always more destructive than adware"
+          ],
+          "correct": "Spyware collects user data secretly; adware primarily delivers unwanted advertisements"
+        },
+        {
+          "question": "Which of the following is a defining characteristic of a worm compared to a virus?",
+          "choices": [
+            "A worm requires a host file to spread",
+            "A worm can only infect Windows systems",
+            "A worm spreads independently without needing to attach to another file",
+            "A worm always demands a ransom from the victim"
+          ],
+          "correct": "A worm spreads independently without needing to attach to another file"
+        },
+        {
+          "question": "What type of malware creates a hidden backdoor on an infected system, allowing an attacker to return at any time?",
+          "choices": [
+            "Ransomware",
+            "Remote Access Trojan (RAT)",
+            "Adware",
+            "Logic Bomb"
+          ],
+          "correct": "Remote Access Trojan (RAT)"
+        },
+        {
+          "question": "A logic bomb is best described as:",
+          "choices": [
+            "Malware that spreads through email attachments",
+            "Malware that activates only when a specific condition or event is triggered",
+            "A type of rootkit targeting the BIOS",
+            "A virus that corrupts executable files"
+          ],
+          "correct": "Malware that activates only when a specific condition or event is triggered"
+        },
+        {
+          "question": "Which term describes legitimate-looking software that secretly performs malicious actions in the background?",
+          "choices": [
+            "Worm",
+            "Trojan Horse",
+            "Polymorphic virus",
+            "Keylogger"
+          ],
+          "correct": "Trojan Horse"
+        },
+        {
+          "question": "What makes a polymorphic virus particularly difficult to detect with traditional antivirus software?",
+          "choices": [
+            "It only infects mobile devices",
+            "It changes its code or signature each time it replicates",
+            "It hides in the system BIOS",
+            "It requires no host file to spread"
+          ],
+          "correct": "It changes its code or signature each time it replicates"
+        },
+        {
+          "question": "A kernel-mode rootkit is more dangerous than a user-mode rootkit because:",
+          "choices": [
+            "It spreads faster across networks",
+            "It operates with the highest level of system privileges, making it harder to detect",
+            "It can encrypt user files",
+            "It is delivered only via phishing emails"
+          ],
+          "correct": "It operates with the highest level of system privileges, making it harder to detect"
+        },
+        {
+          "question": "Which type of malware is specifically designed to mine cryptocurrency on a victim's machine without their knowledge?",
+          "choices": [
+            "Ransomware",
+            "Cryptojacker",
+            "Spyware",
+            "Bootkit"
+          ],
+          "correct": "Cryptojacker"
+        },
+        {
+          "question": "What is the term for malware that records and transmits a user's web browsing habits and personal information to a third party?",
+          "choices": [
+            "Adware",
+            "Ransomware",
+            "Spyware",
+            "Worm"
+          ],
+          "correct": "Spyware"
+        },
+        {
+          "question": "Which of the following BEST describes the difference between a virus and a rootkit?",
+          "choices": [
+            "A virus hides itself from the OS; a rootkit replicates by attaching to files",
+            "A virus replicates by attaching to files; a rootkit hides malicious activity and maintains privileged access",
+            "A rootkit always encrypts data; a virus does not",
+            "There is no difference — they are the same type of malware"
+          ],
+          "correct": "A virus replicates by attaching to files; a rootkit hides malicious activity and maintains privileged access"
+        },
+        {
+          "question": "Which of the following is the MOST effective first step when responding to a ransomware infection?",
+          "choices": [
+            "Pay the ransom immediately",
+            "Reformat all drives on the network",
+            "Isolate the infected system from the network to prevent further spread",
+            "Update the antivirus definitions"
+          ],
+          "correct": "Isolate the infected system from the network to prevent further spread"
+        },
+        {
+          "question": "A fileless malware attack is dangerous primarily because:",
+          "choices": [
+            "It always arrives via USB drives",
+            "It resides in memory and leaves little to no trace on the hard drive, evading traditional file-based detection",
+            "It can only be stopped by reinstalling the OS",
+            "It exclusively targets mobile operating systems"
+          ],
+          "correct": "It resides in memory and leaves little to no trace on the hard drive, evading traditional file-based detection"
         }
     ]
 }
