@@ -26,45 +26,46 @@
     <div id="container">
 
     <!-- info box -->
-    <div id="start-slide" class="flex">
+        <div id="start-slide" class="flex">
         <div class="info-title"><h2>Study IT - Prepare for IT Certifications</h2></div>
             <div class="info">
-                Ready to ace your entry-level tech exams? Challenge yourself with these CompTIA trifecta inspired practice questions. Each incorrect answer adds a 10-second penalty - so think carefully!
+                Ready to ace your entry-level information technology exams? Challenge yourself with these CompTIA trifecta inspired practice questions. Each incorrect answer adds a 10-second penalty - so think carefully!
 
                 <!-- start quiz button -->
                 <div class="start-btn flex"><button id="begin" class="btn">Start Quiz</button></div>
             </div>
         </div>
-    </div>
+    
 
-    <!-- quiz box -->
-    <div id="quiz-slide" class="flex">
-        <div class="question-container">
-            <div id="question"></div>
-            <div id="answers" class="btn-grid"></div>
+        <!-- quiz box -->
+        <div id="quiz-slide" class="flex">
+            <div class="question-container">
+                <div id="question"></div>
+                <div id="answers" class="btn-grid"></div>
+            </div>
         </div>
-    </div>
 
-    <!-- right/wrong "alert" -->
-    <div id="result">
-        <span id="right-or-wrong"></span>
-    </div>
-
-    <!-- endgame page -->
-    <div id="finish" class="hide">
-        <h2>You have successfully finished the quiz!</h2>
-        <div>
-            <label for="initials">Initials: </label>
-            <input type="text" id="initials" />
-            <button type="submit" id="submit-high-score">Submit</button>
+        <!-- right/wrong "alert" -->
+        <div id="result">
+            <span id="right-or-wrong"></span>
         </div>
-    </div>
-    <div class="high-scores-container">
-        <ol id="high-score-list">
-        </ol>
-        <div class="buttons">
-            <button class="btn" type="button" onclick="goBack()">Go Back</button>
-        </div>   
+
+        <!-- endgame page -->
+        <div id="finish" class="hide">
+            <h2>You have successfully finished the quiz!</h2>
+            <div>
+                <label for="initials">Initials: </label>
+                <input type="text" id="initials" />
+                <button type="submit" id="submit-high-score">Submit</button>
+            </div>
+        </div>
+        <div class="high-scores-container">
+            <ol id="high-score-list">
+            </ol>
+            <div class="buttons">
+                <button class="btn" type="button" onclick="goBack()">Go Back</button>
+            </div>   
+        </div>
     </div>
 
     <script src='./assets/js/script.js'></script>
