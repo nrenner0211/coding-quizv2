@@ -219,6 +219,216 @@
             "window.location='http://www.newlocation.com';"
           ],
           "correct": "window.location='http://www.newlocation.com';"
+        },
+        {
+          "question": "A central location for a Linux distribution's officially supported software packages is called a: ",
+          "choices": [
+            "package bin",
+            "repository",
+            "directory",
+            "suppository"
+          ],
+          "correct": "repository"
+        },
+        {
+          "question": "At which OSI layer does a router primarily operate?",
+          "choices": [
+            "Layer 1 – Physical",
+            "Layer 2 – Data Link",
+            "Layer 3 – Network",
+            "Layer 4 – Transport"
+          ],
+          "correct": "Layer 3 – Network"
+        },
+        {
+          "question": "Which OSI layer is responsible for end-to-end error recovery and flow control?",
+          "choices": [
+            "Layer 3 – Network",
+            "Layer 4 – Transport",
+            "Layer 5 – Session",
+            "Layer 6 – Presentation"
+          ],
+          "correct": "Layer 4 – Transport"
+        },
+        {
+          "question": "A host has the IP address 192.168.10.45/27. What is the network address of its subnet?",
+          "choices": [
+            "192.168.10.0",
+            "192.168.10.16",
+            "192.168.10.32",
+            "192.168.10.64"
+          ],
+          "correct": "192.168.10.32"
+        },
+        {
+          "question": "How many usable host addresses exist in a /26 subnet?",
+          "choices": [
+            "30",
+            "62",
+            "64",
+            "126"
+          ],
+          "correct": "62"
+        },
+        {
+          "question": "Which subnet mask is represented by /21?",
+          "choices": [
+            "255.255.248.0",
+            "255.255.252.0",
+            "255.255.240.0",
+            "255.255.254.0"
+          ],
+          "correct": "255.255.248.0"
+        },
+        {
+          "question": "Which command correctly assigns a switch port to VLAN 30?",
+          "choices": [
+            "switchport vlan 30",
+            "vlan 30 interface fa0/1",
+            "switchport access vlan 30",
+            "set port vlan 30"
+          ],
+          "correct": "switchport access vlan 30"
+        },
+        {
+          "question": "What is the purpose of a trunk port on a switch?",
+          "choices": [
+            "To carry traffic for a single VLAN only",
+            "To carry traffic for multiple VLANs between switches",
+            "To block inter-VLAN routing",
+            "To assign a port to the native VLAN"
+          ],
+          "correct": "To carry traffic for multiple VLANs between switches"
+        },
+        {
+          "question": "Which STP port state forwards data frames AND learns MAC addresses?",
+          "choices": [
+            "Blocking",
+            "Listening",
+            "Learning",
+            "Forwarding"
+          ],
+          "correct": "Forwarding"
+        },
+        {
+          "question": "Which bridge is elected as the root bridge in STP?",
+          "choices": [
+            "The bridge with the highest MAC address",
+            "The bridge with the lowest bridge priority, then lowest MAC address",
+            "The bridge with the most ports",
+            "The bridge with the highest bridge priority"
+          ],
+          "correct": "The bridge with the lowest bridge priority, then lowest MAC address"
+        },
+        {
+          "question": "What is the default administrative distance of OSPF?",
+          "choices": [
+            "90",
+            "100",
+            "110",
+            "120"
+          ],
+          "correct": "110"
+        },
+        {
+          "question": "Which routing protocol uses Dijkstra's Shortest Path First (SPF) algorithm?",
+          "choices": [
+            "RIP",
+            "EIGRP",
+            "OSPF",
+            "BGP"
+          ],
+          "correct": "OSPF"
+        },
+        {
+          "question": "What is the maximum hop count for RIP version 2?",
+          "choices": [
+            "15",
+            "16",
+            "255",
+            "Unlimited"
+          ],
+          "correct": "15"
+        },
+        {
+          "question": "A TCP segment has both the SYN and ACK flags set. What stage of the 3-way handshake does this represent?",
+          "choices": [
+            "Step 1 – Client initiates connection",
+            "Step 2 – Server acknowledges and sends its own SYN",
+            "Step 3 – Client completes the handshake",
+            "Connection termination"
+          ],
+          "correct": "Step 2 – Server acknowledges and sends its own SYN"
+        },
+        {
+          "question": "Which protocol provides connectionless, best-effort delivery at the transport layer?",
+          "choices": [
+            "TCP",
+            "ICMP",
+            "UDP",
+            "ARP"
+          ],
+          "correct": "UDP"
+        },
+        {
+          "question": "Which type of NAT maps multiple inside local addresses to a single public IP address using port numbers?",
+          "choices": [
+            "Static NAT",
+            "Dynamic NAT",
+            "PAT (NAT Overload)",
+            "Twice NAT"
+          ],
+          "correct": "PAT (NAT Overload)"
+        },
+        {
+          "question": "Where should a standard ACL be placed for optimal filtering efficiency?",
+          "choices": [
+            "As close to the source as possible",
+            "As close to the destination as possible",
+            "On every router interface",
+            "Only on the core router"
+          ],
+          "correct": "As close to the destination as possible"
+        },
+        {
+          "question": "What is the correct order of messages in the DHCP lease process?",
+          "choices": [
+            "Offer, Discover, Request, Acknowledge",
+            "Discover, Request, Offer, Acknowledge",
+            "Discover, Offer, Request, Acknowledge",
+            "Request, Discover, Offer, Acknowledge"
+          ],
+          "correct": "Discover, Offer, Request, Acknowledge"
+        },
+        {
+          "question": "Which IPv6 address type is the equivalent of RFC 1918 private addresses in IPv4?",
+          "choices": [
+            "Link-Local (FE80::/10)",
+            "Global Unicast (2000::/3)",
+            "Unique Local (FC00::/7)",
+            "Multicast (FF00::/8)"
+          ],
+          "correct": "Unique Local (FC00::/7)"
+        },
+        {
+          "question": "Which Cisco switch security feature prevents rogue DHCP servers by restricting DHCP replies to trusted ports only?",
+          "choices": [
+            "Port Security",
+            "Dynamic ARP Inspection",
+            "DHCP Snooping",
+            "802.1X"
+          ],
+          "correct": "DHCP Snooping"
+        },
+        {
+          "question": "Which 802.11 standard introduced MIMO and operates on both 2.4 GHz and 5 GHz bands?",
+          "choices": [
+            "802.11a",
+            "802.11g",
+            "802.11n",
+            "802.11b"
+          ],
+          "correct": "802.11n"
         }
     ]
 }
