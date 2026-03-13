@@ -1,225 +1,285 @@
-// DOM elements
-var startBtn = document.querySelector(".start-btn");
-var startSlide = document.getElementById("start-slide");
-var quizSlide = document.getElementById("quiz-slide");
-var viewScoresBtn = document.querySelector(".high-scores");
+// =============================================
+//  QUIZ APP - Full Rewrite
+// =============================================
+
+// ===== DOM Elements =====
+var startSlide         = document.getElementById("start-slide");
+var quizSlide          = document.getElementById("quiz-slide");
+var endGameSlide       = document.getElementById("finish");
 var highScoreContainer = document.querySelector(".high-scores-container");
-var highScoreList = document.getElementById("high-score-list");
-var navButtons = document.querySelector(".buttons");
-var endGameSlide = document.getElementById("finish");
-var answerEl = document.getElementById("answers");
-var questionEl = document.getElementById("question");
-var resultEl = document.getElementById("result");
-var rightOrWrong = document.querySelector('#right-or-wrong');
-var nameInput = document.querySelector('#name');
+var navButtons         = document.querySelector(".buttons");
+var questionEl         = document.getElementById("question");
+var answerEl           = document.getElementById("answers");
+var resultEl           = document.getElementById("result");
+var rightOrWrong       = document.getElementById("right-or-wrong");
+var timerDisplay       = document.getElementById("timer");
+var highScoreList      = document.getElementById("high-score-list");
 
-// ===== Timer & Score Variables =====
-var timerInterval = null; // FIX: single global reference (was split between `time` global + `var time` inside startQuiz, making clearInterval unreliable)
-var timeLeft = 120;
-var score = 0;
+// ===== Buttons =====
+var startBtn        = document.querySelector("#begin");
+var startBtnNoTimer = document.querySelector(".start-btn-no-timer");
+var viewScoresBtn   = document.querySelector(".high-scores");
 
-// ===== Local Storage =====
-var highScores = [];
-if (localStorage.getItem('highScores') !== null) {
-    highScores = JSON.parse(localStorage.getItem('highScores'));
+// ===== State =====
+var quizQuestions = [];
+var questionIndex = 0;
+var score         = 0;
+var timeLeft      = 120;
+var timerInterval = null;
+var practiceMode  = false; // true = no timer, false = timed
+
+// ===== High Scores =====
+var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+
+// =============================================
+//  UTILITIES
+// =============================================
+
+function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+    return arr;
 }
 
-// ===== Helpers =====
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+function hideAll() {
+    startSlide.style.display         = "none";
+    quizSlide.style.display          = "none";
+    endGameSlide.style.display       = "none";
+    highScoreContainer.style.display = "none";
+    navButtons.style.display         = "none";
+}
+
+function stopTimer() {
+    if (timerInterval !== null) {
+        clearInterval(timerInterval);
+        timerInterval = null;
     }
 }
 
-// ===== Question Data =====
-var questionIndex = 0;
-var quizQuestions = [];
+// =============================================
+//  SCREENS
+// =============================================
 
-function fetchQuestions() {
-    return fetch('./assets/data/questions.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
+function showStartScreen() {
+    stopTimer();
+    hideAll();
+    startSlide.style.display = "block";
+}
+
+function showHighScores() {
+    hideAll();
+    highScoreContainer.style.display = "block";
+    navButtons.style.display = "block";
+
+    highScoreList.innerHTML = "";
+
+    if (highScores.length === 0) {
+        var li = document.createElement("li");
+        li.textContent = "No scores yet. Play a game!";
+        highScoreList.appendChild(li);
+        return;
+    }
+
+    for (var i = 0; i < highScores.length; i++) {
+        var li = document.createElement("li");
+        var tag = highScores[i].mode ? " [" + highScores[i].mode + "]" : "";
+        li.textContent = (i + 1) + ". " + highScores[i].playerName + " - " + highScores[i].score + tag;
+        highScoreList.appendChild(li);
+    }
+}
+
+// =============================================
+//  FETCH & START
+// =============================================
+
+function initQuiz(isPractice) {
+    // Lock in the mode immediately and synchronously before anything async happens
+    practiceMode = isPractice;
+
+    fetch("./assets/data/questions.json")
+        .then(function(response) {
+            if (!response.ok) throw new Error("Failed to load questions");
             return response.json();
         })
-        .then(data => {
-            quizQuestions = data.questions;
+        .then(function(data) {
+            quizQuestions = shuffle(data.questions.slice()); // fresh shuffled copy every game
             startQuiz();
         })
-        .catch(error => console.error('Error fetching questions:', error));
+        .catch(function(err) {
+            console.error("Error loading questions:", err);
+            alert("Could not load questions. Please check the file path.");
+        });
 }
 
-// ===== Screens =====
-function startScreen() {
-    startSlide.style.display = "block";
-    quizSlide.style.display = "none";
-    endGameSlide.style.display = "none";
-    navButtons.style.display = "none";
-    highScoreContainer.style.display = "none";
-}
-
-// ===== Start Quiz =====
 function startQuiz() {
-    // FIX: reset score and index each time a new game starts
-    score = 0;
+    // Reset state
+    score         = 0;
     questionIndex = 0;
-    timeLeft = 120;
+    timeLeft      = 120;
+    stopTimer();
 
-    shuffle(quizQuestions);
-
-    // FIX: clear any existing interval before starting a new one
-    clearInterval(timerInterval);
-    timerInterval = setInterval(function () {
-        document.getElementById("timer").innerHTML = timeLeft;
-        timeLeft--;
-
-        if (timeLeft < 0) {
-            clearInterval(timerInterval); // FIX: clears the correct variable
-            endGame();
-        }
-    }, 1000);
-
-    startSlide.style.display = "none";
+    hideAll();
     quizSlide.style.display = "block";
-    endGameSlide.style.display = "none";
-    navButtons.style.display = "none";
+
+    // Timer setup - decided entirely by practiceMode
+    if (practiceMode) {
+        timerDisplay.style.display = "none";
+    } else {
+        timerDisplay.style.display = "block";
+        timerDisplay.textContent   = timeLeft;
+
+        timerInterval = setInterval(function() {
+            timeLeft--;
+            timerDisplay.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                stopTimer();
+                endGame();
+            }
+        }, 1000);
+    }
 
     loadQuestion();
 }
 
-// ===== Load Question =====
+// =============================================
+//  QUESTION LOGIC
+// =============================================
+
 function loadQuestion() {
-    questionEl.textContent = quizQuestions[questionIndex].question;
+    var current = quizQuestions[questionIndex];
+    questionEl.textContent = current.question;
     answerEl.innerHTML = "";
+    resultEl.style.display = "none";
 
-    var questionChoices = [...quizQuestions[questionIndex].choices]; // FIX: copy array before shuffling so original data is preserved
-    shuffle(questionChoices);
+    var choices = shuffle(current.choices.slice());
 
-    for (var i = 0; i < questionChoices.length; i++) {
-        var item = questionChoices[i];
-        var answerBtn = document.createElement('button');
-        answerBtn.textContent = item;
-        answerBtn.classList.add("btn");
-        answerBtn.addEventListener("click", function () {
-            checkAnswer(this.textContent);
+    choices.forEach(function(choice) {
+        var btn = document.createElement("button");
+        btn.textContent = choice;
+        btn.className = "btn";
+        btn.addEventListener("click", function() {
+            checkAnswer(choice);
         });
-        answerEl.appendChild(answerBtn);
-    }
+        answerEl.appendChild(btn);
+    });
 }
 
-// ===== Check Answer =====
 function checkAnswer(choice) {
-    // FIX: disable all answer buttons immediately to prevent double-clicking during the 1s delay
-    var allBtns = answerEl.querySelectorAll('.btn');
-    allBtns.forEach(function (btn) { btn.disabled = true; });
+    // Disable all buttons immediately
+    Array.from(answerEl.querySelectorAll(".btn")).forEach(function(btn) {
+        btn.disabled = true;
+    });
 
-    var correctAnswer = quizQuestions[questionIndex].correct;
+    var correct = quizQuestions[questionIndex].correct;
 
-    if (choice !== correctAnswer) {
-        rightOrWrong.textContent = "Wrong! -10 seconds";
-        timeLeft = Math.max(0, timeLeft - 10); // FIX: prevent timeLeft going deeply negative on wrong answer near end
-    } else {
+    if (choice === correct) {
         score += 5;
         rightOrWrong.textContent = "Correct! +5 points";
+    } else {
+        rightOrWrong.textContent = practiceMode ? "Wrong!" : "Wrong! -10 seconds";
+
+        if (!practiceMode) {
+            timeLeft = Math.max(0, timeLeft - 10);
+            timerDisplay.textContent = timeLeft;
+        }
     }
 
     resultEl.style.display = "block";
 
-    setTimeout(function () {
+    setTimeout(function() {
         resultEl.style.display = "none";
+        questionIndex++;
 
-        if (questionIndex === quizQuestions.length - 1) {
+        if (questionIndex >= quizQuestions.length) {
             endGame();
         } else {
-            questionIndex++;
             loadQuestion();
         }
     }, 1000);
 }
 
-// ===== End Game =====
+// =============================================
+//  END GAME
+// =============================================
+
 function endGame() {
-    clearInterval(timerInterval); // FIX: now correctly clears the timer using the global reference
-
-    startSlide.style.display = "none";
-    quizSlide.style.display = "none";
+    stopTimer();
+    hideAll();
     endGameSlide.style.display = "block";
-    navButtons.style.display = "block";
+    navButtons.style.display   = "block";
 
-    // FIX: show final score on end screen
     var finalScoreEl = document.getElementById("final-score");
-    if (finalScoreEl) finalScoreEl.textContent = "Your score: " + score;
+    if (finalScoreEl) {
+        finalScoreEl.textContent = "Your score: " + score;
+    }
 
-    // FIX: remove old listener before adding a new one to prevent stacking duplicate submissions
-    var submitBtn = document.querySelector("#submit-high-score");
-    var newSubmitBtn = submitBtn.cloneNode(true);
-    submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+    // Clone submit button to cleanly remove any old listeners
+    var oldSubmit = document.getElementById("submit-high-score");
+    var newSubmit = oldSubmit.cloneNode(true);
+    oldSubmit.parentNode.replaceChild(newSubmit, oldSubmit);
 
-    newSubmitBtn.addEventListener("click", function () {
-        var initials = document.querySelector("#initials").value.trim();
+    newSubmit.addEventListener("click", function() {
+        var initials = document.getElementById("initials").value.trim();
         if (!initials) {
-            alert("Please enter your initials before submitting.");
+            alert("Please enter your initials.");
             return;
         }
-        submitHighScore(initials, score);
+        saveHighScore(initials);
     });
 }
 
-// ===== Submit High Score =====
-function submitHighScore(initials, score) {
-    var highScore = {
+function saveHighScore(initials) {
+    highScores.push({
         playerName: initials,
-        score: score
-    };
+        score:      score,
+        mode:       practiceMode ? "Practice" : "Timed"
+    });
 
-    highScores.push(highScore);
-    highScores.sort(function (a, b) { return b.score - a.score; });
-    highScores = highScores.slice(0, 10); // FIX: cap list at top 10 so it doesn't grow forever
+    highScores.sort(function(a, b) { return b.score - a.score; });
+    highScores = highScores.slice(0, 10);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    document.querySelector("#initials").value = "";
-    viewHighScores();
+    document.getElementById("initials").value = "";
+    showHighScores();
 }
 
-// ===== View High Scores =====
-function viewHighScores() {
-    quizSlide.style.display = "none";
-    startSlide.style.display = "none";
-    endGameSlide.style.display = "none";
-    highScoreContainer.style.display = "block";
+// =============================================
+//  NAVIGATION
+// =============================================
 
-    // FIX: clear the list before re-rendering to prevent duplicate entries stacking up
-    highScoreList.innerHTML = "";
-
-    if (highScores.length === 0) {
-        var empty = document.createElement("li");
-        empty.textContent = "No scores yet. Play a game!";
-        highScoreList.appendChild(empty);
-        return;
-    }
-
-    for (var i = 0; i < highScores.length; i++) {
-        var scoreElem = document.createElement("li");
-        scoreElem.textContent = (i + 1) + ". " + highScores[i].playerName + " — " + highScores[i].score;
-        highScoreList.appendChild(scoreElem);
-    }
-}
-
-// ===== Reset / Go Back =====
 function resetQuiz() {
-    clearInterval(timerInterval); // FIX: stop timer before reloading
-    timeLeft = 120;
-    score = 0;
-    questionIndex = 0;
+    stopTimer();
     location.reload();
 }
 
 function goBack() {
-    clearInterval(timerInterval); // FIX: stop timer when navigating back
-    startScreen();
-    resetQuiz();
+    stopTimer();
+    showStartScreen();
 }
 
-// ===== Event Listeners =====
-startBtn.addEventListener("click", fetchQuestions);
-viewScoresBtn.addEventListener("click", viewHighScores);
+// =============================================
+//  EVENT LISTENERS
+// =============================================
+
+startBtn.addEventListener("click", function() {
+    initQuiz(false); // timed mode
+});
+
+startBtnNoTimer.addEventListener("click", function() {
+    initQuiz(true); // practice mode
+});
+
+viewScoresBtn.addEventListener("click", function() {
+    showHighScores();
+});
+
+// =============================================
+//  INIT
+// =============================================
+
+showStartScreen();
