@@ -29,10 +29,13 @@
         <div id="start-slide" class="flex">
         <div class="info-title"><h2>Study IT - Prepare for IT Certifications</h2></div>
             <div class="info">
-                Ready to ace your entry-level information technology exams? Challenge yourself with these CompTIA trifecta inspired practice questions. Each incorrect answer adds a 10-second penalty - so think carefully!
+                Ready to ace your information technology exams? Challenge yourself with quiz questions inspired by real exams such as CompTIA A+, Network+, Security+ and Linux+. In timed mode, each incorrect answer adds a 10-second penalty - so think carefully!
 
                 <!-- start quiz button -->
-                <div class="start-btn flex"><button id="begin" class="btn">Start Quiz</button></div>
+                <div class="start-btn flex">
+                    <button id="begin" class="btn">Start Quiz (Timed)</button>
+                    <button class="btn start-btn-no-timer">Practice Mode</button>
+                </div>
             </div>
         </div>
     
@@ -60,8 +63,8 @@
             </div>
         </div>
         <div class="high-scores-container">
-            <ol id="high-score-list">
-            </ol>
+            <ul id="high-score-list">
+            </ul>
             <div class="buttons">
                 <button class="btn" type="button" onclick="goBack()">Go Back</button>
             </div>   
